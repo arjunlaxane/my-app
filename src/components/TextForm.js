@@ -9,6 +9,7 @@ export default function TextForm(props) {
 
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert('Converted to uppercase', 'Success');
   };
 
   const handleLoClick = () => {
@@ -16,6 +17,7 @@ export default function TextForm(props) {
 
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert('Converted to lowercase', 'Success');
   };
 
   const handleOnChange = event => {
@@ -29,11 +31,13 @@ export default function TextForm(props) {
     console.log(msg);
     msg.text = text;
     window.speechSynthesis.speak(msg);
+    props.showAlert('Listen', 'Success');
   };
 
   const handleClClick = () => {
     let newText = '';
     setText(newText);
+    props.showAlert('Text cleared', 'Success');
   };
 
   const handleReverse = event => {
@@ -44,12 +48,14 @@ export default function TextForm(props) {
     /* Convert array to string*/
     let newText = strArr.join('');
     setText(newText);
+    props.showAlert('Text Reverse', 'Success');
   };
 
   const showCharacterWise = event => {
     let newText = text.split('').join(' ');
     // console.log(newText);
     setText(newText);
+    props.showAlert('See Characters', 'Success');
   };
 
   const handletextExtract = () => {
@@ -58,6 +64,7 @@ export default function TextForm(props) {
     const letters = text.match(regex);
     const res1 = letters.join('');
     setText(res1);
+    props.showAlert('Text Extracted', 'Success');
   };
 
   const handleNumExtract = () => {
@@ -66,12 +73,14 @@ export default function TextForm(props) {
     const digits = text.match(regex);
     const res = digits.join('');
     setText(res);
+    props.showAlert('Number Extracted', 'Success');
   };
 
   const capitalize = () => {
     let firstchar = text.charAt(0); // storing the first char of the string
     let newText = firstchar.toUpperCase(); // converting that to uppercase
     setText(newText + text.slice(1)); // printing it with rest excluding the first char by using slice
+    props.showAlert('First letter Capitalize', 'Success');
   };
 
   const capitalFirstLetter = () => {
@@ -82,6 +91,7 @@ export default function TextForm(props) {
       uppercaseword += element.charAt(0).toUpperCase() + element.slice(1) + ' ';
     });
     setText(uppercaseword);
+    props.showAlert('First letter of every word is capitalized', 'Success');
   };
 
   const handleCopy = () => {
@@ -89,6 +99,7 @@ export default function TextForm(props) {
     var text = document.getElementById('mybox');
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert('Copy', 'Success');
   };
 
   //remove extra space
@@ -96,6 +107,7 @@ export default function TextForm(props) {
   const handleExtraSpace = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(' '));
+    props.showAlert('Extra space removed', 'Success');
   };
 
   return (
