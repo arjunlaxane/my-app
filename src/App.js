@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
-
-let name = 'Arjun';
+import About from './components/About';
+import Navbar from './components/Navbar';
+import TextForm from './components/TextForm';
 function App() {
   return (
-    <nav>
-      <li>Home</li>
-      <li>About</li>
-      <li>Contact</li>
+    <>
+      {/* <Navbar title="word power" aboutText="About Us" /> */}
+      <Navbar title="word power" />
 
-      <div className="container">
-        <h1>Hello, {name}</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. A minus
-          porro, praesentium asperiores, exercitationem id natus nihil
-          reprehenderit assumenda amet sunt reiciendis sed minima voluptatibus?
-        </p>
+      <div className="container my-3">
+        <TextForm heading="Enter the text" />
+
+        {/* <About /> */}
       </div>
-    </nav>
+      {/* <Navbar /> */}
+
+      {/* when i'm writing title="wordpower" then i'm passing prop */}
+    </>
   );
 }
 
