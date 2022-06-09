@@ -24,12 +24,22 @@ function App() {
     if (mode === 'light') {
       setMode('dark');
       document.body.style.backgroundColor = 'grey';
-
       showAlert('Dark mode has been enabled', 'success');
+      // document.title = 'WordGame-Dark Mode';
+
+      // setInterval(() => {
+      //   document.title = 'WordGame-Amazing game';
+      // }, 1500);
+
+      // setInterval(() => {
+      //   document.title = 'WordGame-Install thisAmazing game';
+      // }, 2000);
     } else {
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert('Light mode has been enabled', 'success');
+      // changing title dynamically
+      document.title = 'WordGame-Light Mode';
     }
   };
   return (

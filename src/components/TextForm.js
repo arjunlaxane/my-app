@@ -5,39 +5,39 @@ export default function TextForm(props) {
   const [text, setText] = useState('');
 
   const handleUpClick = () => {
-    console.log('Uppercase was click');
+    // console.log('Uppercase was click');
 
     let newText = text.toUpperCase();
     setText(newText);
-    props.showAlert('Converted to uppercase', 'Success');
+    props.showAlert('Converted to uppercase', 'success');
   };
 
   const handleLoClick = () => {
-    console.log('Lowercase was click');
+    // console.log('Lowercase was click');
 
     let newText = text.toLowerCase();
     setText(newText);
-    props.showAlert('Converted to lowercase', 'Success');
+    props.showAlert('Converted to lowercase', 'success');
   };
 
   const handleOnChange = event => {
-    console.log('On changed');
+    // console.log('On changed');
     setText(event.target.value);
-    console.log(event.target.value);
+    // console.log(event.target.value);
   };
 
   const speak = () => {
     let msg = new SpeechSynthesisUtterance();
-    console.log(msg);
+    // console.log(msg);
     msg.text = text;
     window.speechSynthesis.speak(msg);
-    props.showAlert('Listen', 'Success');
+    props.showAlert('Listen', 'success');
   };
 
   const handleClClick = () => {
     let newText = '';
     setText(newText);
-    props.showAlert('Text cleared', 'Success');
+    props.showAlert('Text cleared', 'success');
   };
 
   const handleReverse = event => {
@@ -48,14 +48,14 @@ export default function TextForm(props) {
     /* Convert array to string*/
     let newText = strArr.join('');
     setText(newText);
-    props.showAlert('Text Reverse', 'Success');
+    props.showAlert('Text Reverse', 'success');
   };
 
   const showCharacterWise = event => {
     let newText = text.split('').join(' ');
     // console.log(newText);
     setText(newText);
-    props.showAlert('See Characters', 'Success');
+    props.showAlert('See Characters', 'success');
   };
 
   const handletextExtract = () => {
@@ -64,7 +64,7 @@ export default function TextForm(props) {
     const letters = text.match(regex);
     const res1 = letters.join('');
     setText(res1);
-    props.showAlert('Text Extracted', 'Success');
+    props.showAlert('Text Extracted', 'success');
   };
 
   const handleNumExtract = () => {
@@ -73,33 +73,33 @@ export default function TextForm(props) {
     const digits = text.match(regex);
     const res = digits.join('');
     setText(res);
-    props.showAlert('Number Extracted', 'Success');
+    props.showAlert('Number Extracted', 'success');
   };
 
   const capitalize = () => {
     let firstchar = text.charAt(0); // storing the first char of the string
     let newText = firstchar.toUpperCase(); // converting that to uppercase
     setText(newText + text.slice(1)); // printing it with rest excluding the first char by using slice
-    props.showAlert('First letter Capitalize', 'Success');
+    props.showAlert('First letter Capitalize', 'success');
   };
 
   const capitalFirstLetter = () => {
     let words = text.split(' ');
-    console.log(words);
+    // console.log(words);
     let uppercaseword = ' ';
     words.forEach(element => {
       uppercaseword += element.charAt(0).toUpperCase() + element.slice(1) + ' ';
     });
     setText(uppercaseword);
-    props.showAlert('First letter of every word is capitalized', 'Success');
+    props.showAlert('First letter of every word is capitalized', 'success');
   };
 
   const handleCopy = () => {
-    console.log('I am copy');
+    // console.log('I am copy');
     var text = document.getElementById('mybox');
     text.select();
     navigator.clipboard.writeText(text.value);
-    props.showAlert('Copy', 'Success');
+    props.showAlert('Copy', 'success');
   };
 
   //remove extra space
@@ -107,7 +107,7 @@ export default function TextForm(props) {
   const handleExtraSpace = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(' '));
-    props.showAlert('Extra space removed', 'Success');
+    props.showAlert('Extra space removed', 'success');
   };
 
   return (
