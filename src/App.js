@@ -23,7 +23,43 @@ function App() {
     }, 3000);
   };
 
-  const toggleMode = () => {
+  // const toggleMode = () => {
+  //   if (mode === 'light') {
+  //     setMode('dark');
+  //     document.body.style.backgroundColor = '#51509b';
+  //     showAlert('Dark mode has been enabled', 'success');
+  //     // document.title = 'WordGame-Dark Mode';
+
+  //     // setInterval(() => {
+  //     //   document.title = 'WordGame-Amazing game';
+  //     // }, 1500);
+
+  //     // setInterval(() => {
+  //     //   document.title = 'WordGame-Install thisAmazing game';
+  //     // }, 2000);
+  //   } else {
+  //     setMode('light');
+  //     document.body.style.backgroundColor = 'white';
+  //     showAlert('Light mode has been enabled', 'success');
+  //     // changing title dynamically
+  //     // document.title = 'WordGame-Light Mode';
+  //   }
+  // };
+
+  const removeBodyClasses = () => {
+    document.body.classList.remove('bg-light');
+    document.body.classList.remove('bg-dark');
+    document.body.classList.remove('bg-primary');
+    document.body.classList.remove('bg-warning');
+    document.body.classList.remove('bg-danger');
+    document.body.classList.remove('bg-success');
+  };
+
+  const toggleMode = cls => {
+    console.log(cls);
+    removeBodyClasses();
+
+    document.body.classList.add('bg-' + cls);
     if (mode === 'light') {
       setMode('dark');
       document.body.style.backgroundColor = '#51509b';
@@ -45,6 +81,7 @@ function App() {
       // document.title = 'WordGame-Light Mode';
     }
   };
+
   return (
     <BrowserRouter>
       <>
