@@ -42,7 +42,7 @@ function App() {
       document.body.style.backgroundColor = 'white';
       showAlert('Light mode has been enabled', 'success');
       // changing title dynamically
-      document.title = 'WordGame-Light Mode';
+      // document.title = 'WordGame-Light Mode';
     }
   };
   return (
