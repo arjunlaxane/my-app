@@ -99,6 +99,7 @@ export default function TextForm(props) {
     var text = document.getElementById('mybox');
     text.select();
     navigator.clipboard.writeText(text.value);
+    document.getSelection().removeAllRanges(); //this is to deselect selected text
     props.showAlert('Copy', 'success');
   };
 

@@ -60,7 +60,7 @@ function App() {
               element={
                 <TextForm
                   showAlert={showAlert}
-                  heading="Enter the text"
+                  heading="Enter Text to convert to Uppercase,Lowercase,Extract,Copy,Clear"
                   mode={mode}
                 />
               }
