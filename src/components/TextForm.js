@@ -128,7 +128,7 @@ export default function TextForm(props) {
             className="form-control"
             id="mybox"
             style={{
-              backgroundColor: props.mode === 'light' ? 'white' : 'grey',
+              backgroundColor: props.mode === 'light' ? 'white' : '#8ba1d0',
               color: props.mode === 'light' ? 'black' : 'white',
             }}
             value={text}
@@ -225,7 +225,11 @@ export default function TextForm(props) {
           }{' '}
           words and {text.length} characters
         </p>
-        <p>{0.008 * text.split(' ').length} minutes read</p>
+        <p>
+          {0.008 *
+            text.split(' ').filter(element => element.length != 0).length}{' '}
+          minutes read
+        </p>
       </div>
       <h3
         style={{

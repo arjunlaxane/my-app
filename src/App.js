@@ -26,7 +26,7 @@ function App() {
   const toggleMode = () => {
     if (mode === 'light') {
       setMode('dark');
-      document.body.style.backgroundColor = 'grey';
+      document.body.style.backgroundColor = '#51509b';
       showAlert('Dark mode has been enabled', 'success');
       // document.title = 'WordGame-Dark Mode';
 
@@ -54,7 +54,7 @@ function App() {
 
         <div className="container my-3">
           <Routes>
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<About mode={mode} />} />
             <Route
               path="/textform"
               element={
