@@ -96,10 +96,14 @@ export default function TextForm(props) {
 
   const handleCopy = () => {
     // console.log('I am copy');
-    var text = document.getElementById('mybox');
-    text.select();
-    navigator.clipboard.writeText(text.value);
-    document.getSelection().removeAllRanges(); //this is to deselect selected text
+    // var text = document.getElementById('mybox');
+    // text.select();
+
+    // when u r using navigator, then no need to use 99,100,104
+    // navigator.clipboard.writeText(text.value);
+    navigator.clipboard.writeText(text);
+
+    // document.getSelection().removeAllRanges(); //this is to deselect selected text
     props.showAlert('Copy', 'success');
   };
 
