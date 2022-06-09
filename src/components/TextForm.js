@@ -135,37 +135,53 @@ export default function TextForm(props) {
             rows="8"
           ></textarea>
         </div>
-        <button onClick={handleUpClick} className="btn btn-primary mx-1 my-4">
+        <button
+          disabled={text.length === 0}
+          onClick={handleUpClick}
+          className="btn btn-primary mx-1 my-4"
+        >
           Convert to Uppercase
         </button>
 
         <button
           onClick={capitalFirstLetter}
+          disabled={text.length === 0}
           className="btn btn-primary mx-1 my-4"
         >
           Capitalize first letter of every word
         </button>
-        <button onClick={handleLoClick} className="btn btn-primary mx-1 my-4">
+        <button
+          onClick={handleLoClick}
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-4"
+        >
           Convert to Lowercase
         </button>
 
-        <button onClick={handleClClick} className="btn btn-primary mx-1 my-4">
+        <button
+          disabled={text.length === 0}
+          onClick={handleClClick}
+          className="btn btn-primary mx-1 my-4"
+        >
           Clear
         </button>
 
         <button
+          disabled={text.length === 0}
           onClick={handleExtraSpace}
           className="btn btn-primary mx-1 my-4"
         >
           Remove extra spaces
         </button>
         <button
+          disabled={text.length === 0}
           onClick={showCharacterWise}
           className="btn btn-primary mx-1 my-4"
         >
           Individual Character
         </button>
         <button
+          disabled={text.length === 0}
           onClick={handletextExtract}
           className="btn btn-primary mx-1 my-4"
         >
@@ -173,6 +189,7 @@ export default function TextForm(props) {
         </button>
 
         <button
+          disabled={text.length === 0}
           onClick={handleNumExtract}
           className="btn btn-primary mx-1 my-4"
         >
@@ -183,6 +200,7 @@ export default function TextForm(props) {
         {/* </button> */}
 
         <button
+          disabled={text.length === 0}
           // type="submit"
           onClick={speak}
           className="btn btn-primary mx-1 my-4"
@@ -191,6 +209,7 @@ export default function TextForm(props) {
         </button>
 
         <button
+          disabled={text.length === 0}
           // type="submit"
           onClick={handleReverse}
           className="btn btn-primary mx-1 my-4"
@@ -198,11 +217,19 @@ export default function TextForm(props) {
           Reverse a string
         </button>
 
-        <button onClick={capitalize} className="btn btn-primary mx-1 my-4">
+        <button
+          onClick={capitalize}
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-4"
+        >
           Capitalize first letter
         </button>
 
-        <button onClick={handleCopy} className="btn btn-primary mx-1 my-4">
+        <button
+          disabled={text.length === 0}
+          onClick={handleCopy}
+          className="btn btn-primary mx-1 my-4"
+        >
           Copy
         </button>
       </div>
@@ -243,7 +270,7 @@ export default function TextForm(props) {
           color: props.mode === 'dark' ? 'white' : 'black',
         }}
       >
-        {text.length > 0 ? text : 'Enter your text to see Previw'}
+        {text.length > 0 ? text : 'Nothing to preview'}
       </p>
     </>
   );
